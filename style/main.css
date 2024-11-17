@@ -1,0 +1,24 @@
+/* link fonts  */
+@font-face {
+  font-family: head-font;
+  src: url(../fonts/Pacifico/Pacifico-Regular.ttf);
+}
+@font-face {
+  font-family: secondary-font;
+  src: url(../fonts/Righteous/Righteous-Regular.ttf);
+}
+@font-face {
+  font-family: main-font;
+  src: url(../fonts/PT_Sans_Caption/PTSansCaption-Regular.ttf);
+}
+/* class of font family */
+.ff-head {
+  font-family: "head-font";
+}
+.ff-secondary {
+  font-family: "secondary-font";
+}
+.ff-main {
+  font-family: "main-font";
+}
+/* class of background-color */
