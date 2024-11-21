@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookmark</title>
     <!-- link favicon -->
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="images/favicon.ico" />
     <!-- ===== Font Awesome Icon Library ===== -->
     <link rel="stylesheet" href="style/all.min.css" />
     <!-- ===== Bootstrap Framework ===== -->
@@ -14,6 +14,60 @@
     <link rel="stylesheet" href="style/main.css" />
   </head>
   <body>
+    <main>
+      <div class="container d-flex flex-column text-center pt-5">
+        <h1 class="ff-head position-relative">Bookmarker</h1>
+      </div>
+      <div class="container">
+        <div
+          class="body w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4 border-start-0 border-end-0"
+        >
+          <h2 class="secondary-font fs-5">
+            <i class="fa-solid fa-bookmark"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+          <div class="siteName w-100 d-flex flex-column justify-content-center">
+            <label for="siteName" class="pb-2 fw-semibold">
+              <i class="fa-solid fa-book-bookmark pe-2"></i>
+              Site Name
+            </label>
+            <input
+              type="text"
+              placeholder="Bookmark Name"
+              class="form-control"
+              id="siteName"
+            />
+          </div>
+          <div class="siteLink w-100 d-flex flex-column justify-content-center">
+            <label for="siteLink" class="pb-2 fw-semibold">
+              <i class="fa-solid fa-link pe-2"></i>
+              Site URL
+            </label>
+            <input
+              type="text"
+              placeholder="Bookmark Name"
+              class="form-control"
+              id="siteLink"
+            />
+          </div>
+          <button class="btn btn-warning fw-bold px-5" id="Submit">
+            Submit
+          </button>
+        </div>
+        <table class="table mt-4 text-center bg-light mb-5">
+          <thead>
+            <tr>
+              <th class="text-capitalize">index</th>
+              <th class="text-capitalize">Website Name</th>
+              <th class="text-capitalize">Visit</th>
+              <th class="text-capitalize">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="sites"></tbody>
+        </table>
+      </div>
+    </main>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/logic.js"></script>
   </body>

@@ -11,6 +11,10 @@
   font-family: main-font;
   src: url(../fonts/PT_Sans_Caption/PTSansCaption-Regular.ttf);
 }
+/* body */
+body {
+  background-color: #f7ecde;
+}
 /* class of font family */
 .ff-head {
   font-family: "head-font";
@@ -22,3 +26,51 @@
   font-family: "main-font";
 }
 /* class of background-color */
+
+h1::before {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 30%;
+  left: 50%;
+  top: 75%;
+  bottom: 0%;
+  background-color: #fec260;
+  transition: height 350ms;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+h1:hover::before {
+  /* background-color: aqua; */
+  height: 55%;
+}
+body::selection {
+  background-color: rgb(254, 194, 96);
+}
+.body {
+  border-width: 2px 0 2px 0;
+  border-style: dotted;
+  border-color: #352e28;
+}
+h2 {
+  background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h2::selection{
+  color: black;
+}
+.form-control:focus{
+  box-shadow: none;
+  border-color: transparent;
+}
