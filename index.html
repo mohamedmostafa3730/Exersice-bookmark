@@ -15,7 +15,7 @@
   </head>
   <body>
     <main>
-      <div class="container d-flex flex-column text-center pt-5">
+      <div class="container d-flex flex-column text-center pt-3">
         <h1 class="ff-head position-relative">Bookmarker</h1>
       </div>
       <div class="container">
@@ -46,7 +46,7 @@
             </label>
             <input
               type="text"
-              placeholder="Bookmark Name"
+              placeholder="web page link"
               class="form-control"
               id="siteLink"
             />
@@ -58,6 +58,41 @@
           >
             Submit
           </button>
+          <div
+            class="container d-flex flex-column flex-md-row justify-content-between align-items-center resule"
+          >
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="radioBtn"
+                id="byWepPages"
+                value="byWepPages"
+              />
+              <label class="form-check-label" for="byWepPages">
+                wep pages
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="radioBtn"
+                id="byBookmarkName"
+                value="byBookmarkName"
+              />
+              <label class="form-check-label" for="byBookmarkName">
+                Bookmark name
+              </label>
+            </div>
+            <input
+              type="text"
+              placeholder="search by Bookmark name ......"
+              class="form-control w-50"
+              id="searchOf"
+              oninput="search()"
+            />
+          </div>
         </div>
         <table class="table mt-4 text-center bg-light mb-5">
           <thead>
@@ -68,7 +103,7 @@
               <th class="text-capitalize">Delete</th>
             </tr>
           </thead>
-          <tbody id="sites"></tbody>
+          <tbody id="rowData"></tbody>
         </table>
       </div>
     </main>

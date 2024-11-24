@@ -67,10 +67,14 @@ h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-h2::selection{
+h2::selection {
   color: black;
 }
-.form-control:focus{
+.form-control:focus,
+.form-check-input:focus {
   box-shadow: none;
   border-color: transparent;
+}
+.form-check-input:checked {
+  background-color: #fec260;
 }
