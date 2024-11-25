@@ -16,14 +16,20 @@ if (localStorage.getItem("sites info") != null) {
 }
 
 function setSite() {
-  var site = {
-    nameByUser: nameOfSite.value,
-    url: urlOfSite.value,
-  };
-  websites.push(site);
-  localStorage.setItem("sites info", JSON.stringify(websites));
-  clear();
-  display(websites);
+  if (regex(nameOfSite) && regex(urlOfSite)) {
+    var site = {
+      nameByUser: nameOfSite.value,
+      url: urlOfSite.value,
+    };
+    websites.push(site);
+    localStorage.setItem("sites info", JSON.stringify(websites));
+    clear();
+    display(websites);
+  } else {
+    alert(
+      "The form is incomplete. Please fill in all required fields and correct any errors."
+    );
+  }
 }
 
 function clear() {
@@ -136,8 +142,14 @@ function regex(element) {
   if (regex[element.id].test(element.value)) {
     element.classList.add("is-valid");
     element.classList.remove("is-invalid");
+    element.nextElementSibling.classList.contains("d-none")
+      ? ""
+      : element.nextElementSibling.classList.add("d-none");
+    return true;
   } else {
     element.classList.add("is-invalid");
     element.classList.remove("is-valid");
+    element.nextElementSibling.classList.remove("d-none");
+    return false;
   }
 }

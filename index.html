@@ -39,6 +39,12 @@
               class="form-control"
               id="siteName"
             />
+            <div class="alert alert-danger d-none py-1">
+              "Please enter a valid input: The value must start with an
+              uppercase letter, followed by 3 to 10 word characters (letters,
+              numbers, or underscores). Optionally, a space may follow, and then
+              up to 5 additional word characters are allowed."
+            </div>
           </div>
           <div class="siteLink w-100 d-flex flex-column justify-content-center">
             <label for="siteLink" class="pb-2 fw-semibold">
@@ -52,6 +58,10 @@
               class="form-control"
               id="siteLink"
             />
+            <div class="alert alert-danger d-none py-1">
+              ' Invalid URL! Please ensure the URL starts with 'https://',
+              contains a valid domain, and optionally includes a path. '
+            </div>
           </div>
           <button
             class="btn btn-outline-success fw-bold px-5"
