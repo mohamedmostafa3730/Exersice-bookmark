@@ -9,10 +9,12 @@ var searchStatus = document.getElementById("byWepPages");
 var searchStatus = "";
 var temp;
 var websites = [];
+
 if (localStorage.getItem("sites info") != null) {
   websites = JSON.parse(localStorage.getItem("sites info"));
   display(websites);
 }
+
 function setSite() {
   var site = {
     nameByUser: nameOfSite.value,
@@ -28,6 +30,7 @@ function clear() {
   nameOfSite.value = "";
   urlOfSite.value = "";
 }
+
 function display(arr) {
   var printList = ``;
   for (var i = 0; i < arr.length; i++) {
@@ -80,6 +83,7 @@ function deleteSite(indexToDelete) {
 function WepPages() {
   searchStatus = "byWepPages";
 }
+
 function BookmarkName() {
   searchStatus = "byBookmarkName";
 }
@@ -113,6 +117,7 @@ function setValuesToUpdate(indexToUpdate) {
   btnAdd.classList.add("d-none");
   temp = indexToUpdate;
 }
+
 function updateItem() {
   websites[temp].nameByUser = nameOfSite.value;
   websites[temp].url = urlOfSite.value;
@@ -121,4 +126,18 @@ function updateItem() {
   clear();
   btnUpd.classList.add("d-none");
   btnAdd.classList.remove("d-none");
+}
+function regex(element) {
+  var regex = {
+    siteName: /^[A-Z]\w{3,10}\s?\w{0,5}$/,
+    siteLink:
+      /^https:\/\/(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\/[^\s]*)?$/,
+  };
+  if (regex[element.id].test(element.value)) {
+    element.classList.add("is-valid");
+    element.classList.remove("is-invalid");
+  } else {
+    element.classList.add("is-invalid");
+    element.classList.remove("is-valid");
+  }
 }
