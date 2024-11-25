@@ -4,6 +4,9 @@ var sites = document.getElementById("sites");
 var searchOf = document.getElementById("searchOf");
 var btnAdd = document.getElementById("Submit");
 var btnUpd = document.getElementById("update");
+var byBookmarkName = document.getElementById("byBookmarkName");
+var searchStatus = document.getElementById("byWepPages");
+var searchStatus = "";
 var temp;
 var websites = [];
 if (localStorage.getItem("sites info") != null) {
@@ -67,21 +70,37 @@ function display(arr) {
     rowData.innerHTML = printList;
   }
 }
+
 function deleteSite(indexToDelete) {
   websites.splice(indexToDelete, 1);
   localStorage.setItem("sites info", JSON.stringify(websites));
   display(websites);
 }
 
+function WepPages() {
+  searchStatus = "byWepPages";
+}
+function BookmarkName() {
+  searchStatus = "byBookmarkName";
+}
+
 function search() {
   var searchArr = [];
   for (var i = 0; i < websites.length; i++) {
-    if (
-      websites[i].nameByUser
-        .toLowerCase()
-        .includes(searchOf.value.toLowerCase())
-    ) {
-      searchArr.push(websites[i]);
+    if (searchStatus === "byBookmarkName") {
+      if (
+        websites[i].nameByUser
+          .toLowerCase()
+          .includes(searchOf.value.toLowerCase())
+      ) {
+        searchArr.push(websites[i]);
+      }
+    } else if (searchStatus === "byWepPages") {
+      if (
+        websites[i].url.toLowerCase().includes(searchOf.value.toLowerCase())
+      ) {
+        searchArr.push(websites[i]);
+      }
     }
   }
   display(searchArr);
